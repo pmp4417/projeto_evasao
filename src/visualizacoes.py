@@ -1,4 +1,5 @@
-import seaborn as sns
+
+import seaborn as sns 
 import matplotlib.pyplot as plt
 import streamlit as st
 
@@ -30,3 +31,12 @@ def plot_qtd_por_nivel(df):
     sns.countplot(x="nivel_risco", data=df, order=["Baixo", "Médio", "Alto"], ax=ax)
     ax.set_title("Quantidade de Alunos por Nível de Risco")
     st.pyplot(fig)
+
+def plot_pairplot_eda(df):
+    st.subheader("🔍 Análise Exploratória")
+    st.caption("Abaixo, visualizamos a relação entre variáveis simuladas e evasão.")
+    try:
+        pairplot_fig = sns.pairplot(df.sample(300), hue='evasao')
+        st.pyplot(pairplot_fig)
+    except KeyError as e:
+        st.error(f"Erro: a coluna '{e.args[0]}' não foi encontrada no DataFrame.")
