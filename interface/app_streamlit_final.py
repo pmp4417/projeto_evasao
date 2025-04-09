@@ -18,6 +18,13 @@ from src.visualizacoes import (
     plot_pairplot_eda
 )
 from src.configuracoes import THRESHOLD_RISCO
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix, classification_report
+
 
 st.set_page_config(page_title="Previsão de Evasão", layout="wide")
 st.title("🎓 Previsão de Evasão Escolar com IA")
@@ -101,4 +108,3 @@ ax_imp.set_title('Top 10 Variáveis mais Relevantes')
 st.pyplot(fig_imp)
 
 st.info("🔍 Preferimos minimizar o Erro Tipo II (falso negativo), ou seja, evitar deixar um aluno que realmente vai sair sem nenhuma ação preventiva.")
-

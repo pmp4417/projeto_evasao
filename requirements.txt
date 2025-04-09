@@ -1,6 +1,7 @@
-pandas
-scikit-learn
-seaborn
-matplotlib
 streamlit
-python-dotenv
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+ipython
